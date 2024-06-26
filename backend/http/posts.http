@@ -1,0 +1,4 @@
+### GET ALL POSTS
+POST http://localhost:4000/api/posts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmU1MTRlNDYxMWRjMmJkZGRiN2I3YSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxOTQyNTU5MSwiZXhwIjoxNzE5NTExOTkxfQ.Xg-o9Kqg8sfb8h3UbSS3R6pS5okiN_bbSDOxU8tmCjo

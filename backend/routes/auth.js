@@ -1,6 +1,7 @@
-const {Router} = require("express")
-const router = Router()
-// http://localhost:4000/api
-router.post("/login",require("../conrollers/auth/login"))
+const {Router} = require("express");
+const router = Router();
 
-module.exports = router
+router.post("/login", require("../conrollers/auth/login"));
+router.post("/register", require("../conrollers/auth/register"));
+
+module.exports = router;

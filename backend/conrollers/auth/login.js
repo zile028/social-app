@@ -1,5 +1,7 @@
 const UserModel = require("../../model/UserModel");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const {JWT_SECRET, JWT_OPTIONS} = require("../../config/config");
 const login = async (req, res) => {
     try {
         let {email, password} = req.body;
@@ -7,7 +9,11 @@ const login = async (req, res) => {
         if (foundUser) {
             let checkPassword = await bcrypt.compare(password, foundUser.password);
             if (checkPassword) {
-                let token = "dfdsfsdfdsf1ds31ds3f1ds3fds";
+                let payload = {
+                    id: foundUser._id,
+                    role: foundUser.role
+                };
+                let token = jwt.sign(payload, JWT_SECRET, JWT_OPTIONS);
                 res.send({user: foundUser, token});
             } else {
                 res.status(201).send("Password is wrong!");
