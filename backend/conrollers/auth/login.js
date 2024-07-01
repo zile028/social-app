@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {JWT_SECRET, JWT_OPTIONS} = require("../../config/config");
 const login = async (req, res) => {
+    console.log(req.body);
     try {
         let {email, password} = req.body;
         const foundUser = await UserModel.findOne({email});
